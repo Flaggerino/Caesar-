@@ -77,21 +77,17 @@ main ()
             
         </para>
         <para>
-         A programunk egy (a fent megnevezett) "háromszögmátrix"-ot hivatott létrehozni.
-         Az int nr a mátrixunk soraiért felelős, jelen esetben a sorok száma 5 lesz.
-         A tm pedig egy double mutató lesz.
-         Az if kifejezésen belül memóriafoglalással találkozunk, mely jelen esetben a a double által lefoglalt 8 byte-ot foglalja le szorozva a az nr értékével.
-         Amennyiben ez a lefoglalandó memóriaterület 0 (NULL) egy return -1 utasítással kilépünk a programból.
-         Tm értékének kiíratása után egy for ciklushoz jutunk, melyben szintén fellelhető egy a memóriafoglalásért felelős if kifejezés.
-         A for ciklusban szereplő ciklusváltozónk (int i=0) szintén szerepel az if-es sorban.
-         Az if-es sorban a tm[i] (azaz a tm i-edik eleme egyenlő)= egy double értékre mutató pointerrel, melynek a következő formulával kerül kiszámításra az értéke:
-         (i+1)*sizeof(double *) azaz i+1-szer vesszük a double pointer méretét (8 byte).
-         Amennyiben ez az érték NULL (0) , a fent leírt return -1 -gyel lépünk ki.
-         A fent leírtak után kiíratásra kerül a tm[0] , majd  a később meghívásra kerülő tm[i][j] megalkotása.
-         Szemmel látható hogy az említett tm[i][j] egy két dimenziós mátrix, melynek elemei az i*(i+1)+j -vel állnak elő..
-         Ez mind rendben van, de a két dimenziós mátrixok inkább négyszögek, mintsem háromszögek.
-         Ezért lesz a formulánk i * (i+1)/2 +j.
-         Következő lépésként tm[i][j] egymás utáni kiíratására kerül sor '\n' karakterekkel elválasztva.
+         Létrehozunk egy háromszög mátrixot.
+         Az int nr-ben megadjuk a mátrixunk sorainak számát.
+         A tm-mel pedig egy double-t hoztunk létre.
+         Az ifen belül memóriát foglal a programunkm mely a double lefoglalt 8 byte-ját jelszi összeszorozva az nr értékével.
+         Ha a lefoglalandó memóriaterület 0 NULL akkor egy -1 return értékkel kilép a program.
+         Miután megkaptuk a tm értékét kapunk egy for ciklust, ami tartalmazza azt az if kifejezést, ami foglalja a memóriát.	
+         A ciklusban látott ciklusváltozó int i=0 megtalálható az ifes sorban is.
+         Az if sorában a tm i-edik eleme egyenlő a double értékre mutató pointerrel. 
+		Ezzel a formulával számítjuk ki az értéket:
+         (i+1)*sizeof(double *): 1-szer vesszük a double pointer méretét (8 byte).
+         Ha az értéke NULL (0) , a fent leírt return -1 -gyel bezárjuk a programot.
          
         </para>            
     </section>        
@@ -144,12 +140,13 @@ main (int argc, char **argv)
               
         </para>
         <para>
-            A titkosító programunk a parancssori argumentumok olvasásával kezdi a működést. (argc, **argv)
-            Megadjuk a kulcsunkat, és a buffert.(az #include szekció alatt definiáltak alapján)
-            Ezek után a deklarációk között megtalálható a kulcs_meret nevű változó, mely a 2. parancssori argumentum hosszával lesz egyenlő.
-            Lemásolja a kulcsot, argv[1](2. argumentum)-ot, illetve a MAX_KULCS névre hallgató a kulcs maximális méretét reprezentáló értéket a bufferbe.
-            Ezek után beolvassa bufferben lévő byte-okat, majd a buffer byte-jait össze "XOR"-ozza (logikai kizáró vagy), mindezt elvégezve a kulcs összes byte-ján.
-            Majd a write funkcióval kiíratásra kerül a buffer tartalma, és a beolvasott byte-ok.
+            A program ezekkel a parancsosri argumentumokkal kezd el működni: (argc, **argv)
+            Adjunk meg egy kulcsot és egy bufferta #include alatt találhatóak alapján.
+            A deklarációk között megtaláljuk a kulcs_meret nevű függvényt, mely a második parancsosir argumentummal lesz egyenlő. 
+            Lemásoljuk a kulcsunkat, argv[1](2. argumentum)-ot, illetve a MAX_KULCS értékét a bufferünkbe.
+            Beolvassuk a bufferben lévő byte-okat és ez össze XOR-ozza a bufferben található byte-okat. XOR = Logikai kizáró vagy
+		Ezt minden kulcs byte-ján elvégzi.
+           A write funkcióval kiírjuk a buffer tartalmát és a byte-okat.
         </para>            
     </section>        
     <section>
@@ -337,12 +334,14 @@ main (void)
              
         </para>
         <para>
-            A programunk #include része után függvénydeklarációkkal találjuk szemben magunkat.
-            Az "atlagos_szohossz" meglehetősen egyszerű, a titkos szó méretét elosztja az olvasott szóközök számával, így megkapjuk az átlagos szóhosszt.
+            A #include rész után aazonnal függvényeket deklarálunk.
+            Az "atlagos_szohossz" egyszerű. A tiktos szó hosszát elosztja az átlag szóshosszal.
             tiszta_lehet (pontos megértés szükséges)
-            Az exor már ismerős lehet a titkosító kapcsán..
-            A mainben a *p pointert léptetjük egy max. értékig , egyenlővé tesszük önmaga és az olvasott byte-ok összegével (folyamatosan növeljük az olvasott byte-okkal).
-            Ezek után egy "bruteforce" mechanizmus fut le, amely az összes lehetséges kulcskombinációt előállítja, majd a megfelelő kombinációt kiírja, a tiszta szöveggel együtt.
+            Az exor a titkosítás miatt ismerőssé válhat.
+            A main részban a p* pointert egy maximális értékig léptetjük , ami azt jelenti, hogy egyenlővé tesszük a saját plusz az
+		olvasott byte-ok számával. 
+            Majd lefuttatun kegy úgynevezett bruteforce mechanizmust, ez előállítja a lehetséges kulcskombinációk összességét, 
+		és ezután kiírja a tiszta szöveget.
 
         </para>            
     </section>        
@@ -432,9 +431,11 @@ compute(nn.exor, exor.data[,1:2])
 
         </para>
         <para>
-            Az R programunk gyakorlatilag szimpla logikai műveletek elvégzésére tanítja a számítógépet neurális háló segítségével.
-            Minden esetben megadunk egy mintát, ami alapján a számítógép egy adott súlyt ad a feldolgozandó információnak, majd a műveletek elvégzése után a végeredmény értékét adja tovább.
-            Ezek az értékek csak közelítőek lesznek. (pl.: egy igaz érték tekintetében 0.9998 érték, vagy hamis érték esetén 0,01-et kapunk)
+            Ez az R program egyszerű logikai műveletekre tanítja a gépünket egy neutrális hálót használva.
+            Mindig adunk egy mintát, ez alapján a számítógép egy adott súlyt ad értékként, majd
+		elvégzi a műveleteket elvégzi és ezt adja meg értéknek.
+             Csak közelítő értékeket kaphatunk. (pl.: igaz érték esetén 0.9998 érték, míg hamis érték esetén
+		0,01)
         </para>            
     </section>        
     <section>
