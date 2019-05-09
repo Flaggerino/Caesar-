@@ -15,6 +15,7 @@
         </para>
         <para>
             Megoldás forrása:   
+		<programlisting><![CDATA[
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -74,7 +75,7 @@ main ()
 
     return 0;
 }
-            
+             ]]></programlisting>
         </para>
         <para>
          Létrehozunk egy háromszög mátrixot.
@@ -101,6 +102,7 @@ main ()
         </para>
         <para>
             Megoldás forrása:  
+		<programlisting><![CDATA[
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
@@ -137,7 +139,7 @@ main (int argc, char **argv)
 
     }
 }
-              
+               ]]></programlisting>
         </para>
         <para>
             A program ezekkel a parancsosri argumentumokkal kezd el működni: (argc, **argv)
@@ -160,7 +162,7 @@ main (int argc, char **argv)
         </para>
         <para>
             Megoldás forrása: 
-
+		<programlisting><![CDATA[
 
 public class ExorTitkosító {
     
@@ -205,10 +207,9 @@ public class ExorTitkosító {
     }
     
 }              
+	 ]]></programlisting>
         </para>
-        <para>
-            Tutor : Nagy Viktor
-        </para>            
+                  
     </section>        
     <section>
         <title>C EXOR törő</title>
@@ -220,6 +221,7 @@ public class ExorTitkosító {
         </para>
         <para>
             Megoldás forrása:   
+		<programlisting><![CDATA[
 #define MAX_TITKOS 4096
 #define OLVASAS_BUFFER 256
 #define KULCS_MERET 8
@@ -332,7 +334,7 @@ main (void)
 
   return 0;
 }
-             
+              ]]></programlisting>
         </para>
         <para>
             A #include rész után aazonnal függvényeket deklarálunk.
@@ -356,7 +358,7 @@ main (void)
         </para>
         <para>
             Megoldás forrása: <link xlink:href="https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R">https://gitlab.com/nbatfai/bhax/tree/master/attention_raising/NN_R</link>          
-                
+                <programlisting><![CDATA[
 #   Copyright (C) 2019  Dr. Norbert Bátfai, nbatfai@gmail.com
 #
 #   This program is free software: you can redistribute it and/or modify
@@ -429,7 +431,7 @@ nn.exor <- neuralnet(EXOR~a1+a2, exor.data, hidden=c(6, 4, 6), linear.output=FAL
 plot(nn.exor)
 
 compute(nn.exor, exor.data[,1:2])
-
+	]]></programlisting>
         </para>
         <para>
             Ez az R program egyszerű logikai műveletekre tanítja a gépünket egy neutrális hálót használva.
