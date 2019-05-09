@@ -88,7 +88,7 @@ main ()
 		Ezzel a formulával számítjuk ki az értéket:
          (i+1)*sizeof(double *): 1-szer vesszük a double pointer méretét (8 byte).
          Ha az értéke NULL (0) , a fent leírt return -1 -gyel bezárjuk a programot.
-         
+         Tutor: Rémiás Dávid
         </para>            
     </section>        
     <section>
@@ -147,6 +147,7 @@ main (int argc, char **argv)
             Beolvassuk a bufferben lévő byte-okat és ez össze XOR-ozza a bufferben található byte-okat. XOR = Logikai kizáró vagy
 		Ezt minden kulcs byte-ján elvégzi.
            A write funkcióval kiírjuk a buffer tartalmát és a byte-okat.
+		Tutor: Rémiás DÁvid
         </para>            
     </section>        
     <section>
@@ -342,7 +343,7 @@ main (void)
 		olvasott byte-ok számával. 
             Majd lefuttatun kegy úgynevezett bruteforce mechanizmust, ez előállítja a lehetséges kulcskombinációk összességét, 
 		és ezután kiírja a tiszta szöveget.
-
+		Tutor: Rémiás Dávid
         </para>            
     </section>        
     <section>
@@ -435,7 +436,7 @@ compute(nn.exor, exor.data[,1:2])
             Mindig adunk egy mintát, ez alapján a számítógép egy adott súlyt ad értékként, majd
 		elvégzi a műveleteket elvégzi és ezt adja meg értéknek.
              Csak közelítő értékeket kaphatunk. (pl.: igaz érték esetén 0.9998 érték, míg hamis érték esetén
-		0,01)
+		0,01) Tutor: Rémiás Dávid
         </para>            
     </section>        
     <section>
